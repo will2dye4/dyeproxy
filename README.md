@@ -54,35 +54,35 @@ requests are issued before the program is terminated (one valid, two invalid). N
 the full responses, which are returned to the client, are not shown.
 
 
-`$ make PORT=4040`
-`dyeproxy running on port 4040 ...`
-``
-`[[[ GET foo HTTP/1.1 ]]]`
-`<<< HTTP/1.1 404 Not Found`
-``
-`[[[ HEAD http://www.google.com HTTP/1.1 ]]]`
-`<<< HTTP/1.1 501 Not Implemented`
-``
-`[[[ GET http://gtphipsi.org HTTP/1.1 ]]]`
-`>>> GET / HTTP/1.1`
-`>>> Host: gtphipsi.org`
-`>>> X-Forwarded-For: 128.61.113.40`
-`>>>`
-`<<< HTTP/1.1 301 Moved Permanently`
-`<<< Server: nginx`
-`<<< Date: Wed, 17 Apr 2013 03:44:13 GMT`
-`<<< Content-Type: text/html; charset=iso-8859-1`
-`<<< Content-Length: 229`
-`<<< Connection: keep-alive`
-`<<< Location: https://gtphipsi.org/`
-``
-`^C`
-`------- dyeproxy statistics -------`
-`Elapsed time			26 seconds`
-`# of requests received			3`
-`# of 200 (OK) responses		1`
-`# 400 (Bad Request) errors		0`
-`# 505 (Not Supported) errors	0`
-`# 403 (Forbidden) errors		0`
-`# 404 (Not Found) errors		1`
-`# 501 (Not Implemented) errors	1`
+	$ make PORT=4040
+	dyeproxy running on port 4040 ...
+	
+	[[[ GET foo HTTP/1.1 ]]]
+	<<< HTTP/1.1 404 Not Found
+	
+	[[[ HEAD http://www.google.com HTTP/1.1 ]]]
+	<<< HTTP/1.1 501 Not Implemented
+	
+	[[[ GET http://gtphipsi.org HTTP/1.1 ]]]
+	>>> GET / HTTP/1.1
+	>>> Host: gtphipsi.org
+	>>> X-Forwarded-For: 128.61.113.40
+	>>>
+	<<< HTTP/1.1 301 Moved Permanently
+	<<< Server: nginx
+	<<< Date: Wed, 17 Apr 2013 03:44:13 GMT
+	<<< Content-Type: text/html; charset=iso-8859-1
+	<<< Content-Length: 229
+	<<< Connection: keep-alive
+	<<< Location: https://gtphipsi.org/
+	
+	^C
+	------- dyeproxy statistics -------
+	Elapsed time			26 seconds
+	# of requests received			3
+	# of 200 (OK) responses			1
+	# 400 (Bad Request) errors		0
+	# 505 (Not Supported) errors	0
+	# 403 (Forbidden) errors		0
+	# 404 (Not Found) errors		1
+	# 501 (Not Implemented) errors	1
